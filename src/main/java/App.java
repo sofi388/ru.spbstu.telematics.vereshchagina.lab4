@@ -12,6 +12,10 @@ public class App{
             pThreads[i] = new prime();
             pThreads[i].bound = 100*i;
             pThreads[i].start();
+            try {
+               pThreads[i].join(10);
+           }
+           catch (InterruptedException ex) {}
         }
         long stopTime = System.currentTimeMillis();
         long elapsedTime = (-1)*(startTime - stopTime);
