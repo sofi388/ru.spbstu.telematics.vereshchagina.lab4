@@ -28,7 +28,7 @@ import junit.framework.TestCase;
      public void testTime() {
 
             //проведем тест на время для следующих количеств потока
-            // 1, 2, 4, 5, 10, 20, 25 потоков
+            // 1, 4, 10, 25 потоков
             int caseMass[] = {1, 4, 10, 25};
             System.out.println("Optimal number of threads");
             for (int k = 0; k < 4; k++) {
