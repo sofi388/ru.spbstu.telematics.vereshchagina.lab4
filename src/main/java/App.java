@@ -11,8 +11,9 @@ public class App{
         for(int i = 0; i<nThreads; i++){
             pThreads[i] = new prime();
             pThreads[i].bound = 100*i;
+            pThreads[i].upperBound = 100*i+100;
             pThreads[i].start();
-            try {
+           try {
                pThreads[i].join(10);
            }
            catch (InterruptedException ex) {}
@@ -26,3 +27,4 @@ public class App{
         }
     }
 }
+
