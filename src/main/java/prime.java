@@ -4,6 +4,7 @@ import java.util.List;
 public class prime extends Thread{
     public int count = 0;
     public int bound;//Для отделения потоков, нижняя граница числа каждого потока
+    public int upperBound;
     public List<Integer> primeList = new ArrayList<>();
 
     public boolean isPrime(int n){
@@ -16,7 +17,7 @@ public class prime extends Thread{
     }
 
     public void run() {
-        for (int n = bound; n <= bound+100; n++) {
+        for (int n = bound; n <= upperBound; n++) { //bound+100
                 if (isPrime(n)){
                 count++;
                 primeList.add(n);
@@ -24,3 +25,4 @@ public class prime extends Thread{
         }
     }
 }
+
